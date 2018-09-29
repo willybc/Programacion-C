@@ -1,0 +1,33 @@
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
+ #header-container{
+  background-color: #0080FF;
+  color:white;
+ }
+
+button
+{
+  background-color: #0080FF;
+  color:white;
+}
+
+.pdf{
+    height: 1200px;
+    width: 100%;
+    style: botder none;
+
+}
+
+a{
+    color: #424242;
+}
+
+.card-body{
+    background-color: #e9ecef;
+}
+
+.card-header{
+    background-color:rgba(255, 255, 255, 0.89);
+}
