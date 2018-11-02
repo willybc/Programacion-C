@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1540839659 source:c:\users\infolab\desktop\today\proyect\title\main.c
+	<stdio.h>
+	<stdlib.h>
+	"vec.h"
+
+1540838864 source:c:\users\infolab\desktop\today\proyect\title\vec.c
+	"vec.h"
+	<stdio.h>
+	<string.h>
+
+1540839032 c:\users\infolab\desktop\today\proyect\title\vec.h
+	"vec.h"
+
