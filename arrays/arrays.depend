@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1541434381 source:c:\users\wilfr\onedrive\escritorio\lab computacion ii\ejercicios\arrays\vec.c
+	"vec.h"
+	<stdio.h>
+	<string.h>
+
+1541434638 c:\users\wilfr\onedrive\escritorio\lab computacion ii\ejercicios\arrays\vec.h
+	"vec.h"
+
+1541434593 source:c:\users\wilfr\onedrive\escritorio\lab computacion ii\ejercicios\arrays\main.c
+	<stdio.h>
+	<stdlib.h>
+	"vec.h"
+
