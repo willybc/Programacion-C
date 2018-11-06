@@ -10,4 +10,10 @@ void menu();
 int leerMarca( int v[]);
 int veces ( int valor , int v[], int num);
 void invertirOrden(int vect[]);
+
+int suma ( int v[] );
+int resta ( int v[]);
+float promedio ( int v[]);
+void supera ( int v[], float prom);
+void multiplo ( int v[]);
 #endif // VEC_H_INCLUDED
