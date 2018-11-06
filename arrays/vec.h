@@ -4,5 +4,10 @@
 
 //PROTOTIPOS
 void carga ( int v[], int n);
-
+void emitir ( int v[], int n);
+void leer ( int v[]);
+void menu();
+int leerMarca( int v[]);
+int veces ( int valor , int v[], int num);
+void invertirOrden(int vect[]);
 #endif // VEC_H_INCLUDED
