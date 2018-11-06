@@ -16,4 +16,8 @@ int resta ( int v[]);
 float promedio ( int v[]);
 void supera ( int v[], float prom);
 void multiplo ( int v[]);
+int maximo ( int v[]);
+int pares ( int v[]);
+int impares ( int v[]);
+int posicion_par ( int v[]);
 #endif // VEC_H_INCLUDED
