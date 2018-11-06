@@ -4,23 +4,6 @@
 
 #define N 10
 
-void menu(){
-    printf("Menu de funciones\n");
-    printf("1: Leer\n");
-    printf("2: Leer elemento leidos con valor a\n");
-    printf("3: Veces \n");
-    printf("4: Invertir Orden \n");
-    printf("5: Suma \n");
-    printf("6: Resta \n");
-    printf("7: Promedio \n");
-    printf("8: Supera \n");
-    printf("9: Multiplo \n");
-    printf("10:Maximo,cantidad y orden \n");
-    printf("11:Pares \n");
-    printf("12:Impares \n");
-    printf("13:Posiciones pares \n");
-}
-
 void carga ( int v[], int n){
     int i;
     for ( i=0; i <n ; i++){
@@ -195,6 +178,59 @@ int posicion_par ( int v[]){
         if ( i % 2 == 0){
             printf("%d \n",v[i]);
         }
+    }
+}
+
+void menu(){
+    int v[N];
+    int opcion;
+    float prom;
+
+    printf("Menu de funciones\n");
+    printf("1: Leer\n");
+    printf("2: Leer elemento leidos con valor a\n");
+    printf("3: Veces \n");
+    printf("4: Invertir Orden \n");
+    printf("5: Suma \n");
+    printf("6: Resta \n");
+    printf("7: Promedio \n");
+    printf("8: Supera \n");
+    printf("9: Multiplo \n");
+    printf("10:Maximo,cantidad y orden \n");
+    printf("11:Pares \n");
+    printf("12:Impares \n");
+    printf("13:Posiciones pares \n");
+
+    printf("\nEscriba funcion\n");
+    scanf("%d", &opcion);
+
+    switch(opcion){
+    case 1: leer(v);
+            break;
+    case 2: leerMarca(v);
+            break;
+    case 3: veces(5,v,0);
+            break;
+    case 4: invertirOrden(v);
+            break;
+    case 5: suma(v);
+            break;
+    case 6: resta(v);
+            break;
+    case 7: promedio(v);
+            break;
+    case 8: supera(v,prom);
+            break;
+    case 9: multiplo(v);
+            break;
+    case 10:maximo(v);
+            break;
+    case 11:pares(v);
+            break;
+    case 12:impares(v);
+            break;
+    case 13:posicion_par(v);
+            break;
     }
 }
 
