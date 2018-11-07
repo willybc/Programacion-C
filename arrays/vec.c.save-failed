@@ -4,23 +4,6 @@
 
 #define N 10
 
-void menu(){
-    printf("Menu de funciones\n");
-    printf("1: Leer\n");
-    printf("2: Leer elemento leidos con valor a\n");
-    printf("3: Veces \n");
-    printf("4: Invertir Orden \n");
-    printf("5: Suma \n");
-    printf("6: Resta \n");
-    printf("7: Promedio \n");
-    printf("8: Supera \n");
-    printf("9: Multiplo \n");
-    printf("10:Maximo,cantidad y orden \n");
-    printf("11:Pares \n");
-    printf("12:Impares \n");
-    printf("13:Posiciones pares \n");
-}
-
 void carga ( int v[], int n){
     int i;
     for ( i=0; i <n ; i++){
@@ -198,5 +181,92 @@ int posicion_par ( int v[]){
     }
 }
 
+void menu(){
+    int v[N];
+    int opcion;
+    float prom;
+
+    printf("Menu de funciones\n");
+    printf("1: Leer\n");
+    printf("2: Leer elemento leidos con valor a\n");
+    printf("3: Veces \n");
+    printf("4: Invertir Orden \n");
+    printf("5: Suma \n");
+    printf("6: Resta \n");
+    printf("7: Promedio \n");
+    printf("8: Supera \n");
+    printf("9: Multiplo \n");
+    printf("10:Maximo,cantidad y orden \n");
+    printf("11:Pares \n");
+    printf("12:Impares \n");
+    printf("13:Posiciones pares \n");
+    printf("24:Programa de Sorteos \n");
+    printf("\nEscriba funcion\n");
+    scanf("%d", &opcion);
+
+    switch(opcion){
+    case 1: leer(v);
+            break;
+    case 2: leerMarca(v);
+            break;
+    case 3: veces(5,v,0);
+            break;
+    case 4: invertirOrden(v);
+            break;
+    case 5: suma(v);
+            break;
+    case 6: resta(v);
+            break;
+    case 7: promedio(v);
+            break;
+    case 8: supera(v,prom);
+            break;
+    case 9: multiplo(v);
+            break;
+    case 10:maximo(v);
+            break;
+    case 11:pares(v);
+            break;
+    case 12:impares(v);
+            break;
+    case 13:posicion_par(v);
+            break;
+    case 24:sorteo(v);
+            break;
+    }
+}
+
+void sorteo ( int v[]){
+    int i,n,cont;
+    printf("Programa de Sorteos \n");
+    for ( i=0 ; i<10 ; i++){
+        cont = 0;
+        int v[54]={0};
+        printf("Sorteo nro %d :",i+1);
+
+        while ( cont < 6){
+            n = rand()%54+1;
+            if( v[n-1] == 0){
+                printf("%d",n);
+                if(cont < 6-1){
+                    printf("-");
+                }
+                v[n-1]=1;
+                cont ++;
+            }
+        }
+        printf("\n");
+    }
+}
+
+void prueba (){
+printf("Que sucede cuando declaramos lo siguiente \n\n");
+printf("int vec[6]\n\n");
+printf("y luego ejecutamos\nvec[6]=78?\n");
+int vec[6],a;
+
+a = (vec[6]=78);
+printf("el valor de vec[6] sera : %d\n",a);
 
 
+}

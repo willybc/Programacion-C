@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1541518493 source:c:\users\wilfr\onedrive\escritorio\lab computacion ii\ejercicios\arrays\vec.c
+1541555662 source:c:\users\wilfr\onedrive\escritorio\lab computacion ii\ejercicios\arrays\vec.c
 	"vec.h"
 	<stdio.h>
 	<string.h>
@@ -7,7 +7,7 @@
 1541555341 c:\users\wilfr\onedrive\escritorio\lab computacion ii\ejercicios\arrays\vec.h
 	"vec.h"
 
-1541554928 source:c:\users\wilfr\onedrive\escritorio\lab computacion ii\ejercicios\arrays\main.c
+1541556190 source:c:\users\wilfr\onedrive\escritorio\lab computacion ii\ejercicios\arrays\main.c
 	<stdio.h>
 	<stdlib.h>
 	"vec.h"

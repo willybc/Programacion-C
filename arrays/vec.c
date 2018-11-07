@@ -258,3 +258,15 @@ void sorteo ( int v[]){
         printf("\n");
     }
 }
+
+void prueba8(){
+printf("Que sucede cuando declaramos lo siguiente \n\n");
+printf("int vec[6]\n\n");
+printf("y luego ejecutamos\n\nvec[6]=78?\n\n");
+int vec[6],a;
+
+a = (vec[6]=78);
+printf("el valor de vec[6] sera : %d\n",a);
+
+
+}
