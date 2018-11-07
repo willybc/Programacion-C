@@ -287,3 +287,14 @@ void prueba10(){
     //no se declara i
     //b[i+1] esta incorrecto , en todo caso tendria que estar afuera de los corchetes
 }
+
+void prueba11(){
+    /*
+    int b[10];
+    for ( i=0 ; i<10 ; i++){
+        B[i] = b[i+1];
+    }
+    */
+    //no se declara i
+    //no se declara B
+}
