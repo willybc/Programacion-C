@@ -3,7 +3,6 @@
 #include <string.h>
 
 #define N 10
-
 void carga ( int v[], int n){
     int i;
     for ( i=0; i <n ; i++){
@@ -242,8 +241,6 @@ void menu(){
             break;
     case 24:sorteo(v);
             break;
-    case 34:ejercicio6(v);
-            break;
     }
 }
 
@@ -268,6 +265,13 @@ void sorteo ( int v[]){
         }
         printf("\n");
     }
+}
+
+void prueba7(){
+    int x, int_array[10];
+    x = int_array[4];
+    printf("%d",x);
+    //se asigna el valor en memoria que toma en la posicion 4
 }
 
 void prueba8(){

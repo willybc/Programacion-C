@@ -5,7 +5,7 @@
 #define N 10
 int main()
 {
-    menu();
+    prueba7();
     getchar();
     return 0;
 }
