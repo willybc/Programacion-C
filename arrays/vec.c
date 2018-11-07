@@ -276,3 +276,14 @@ void prueba9(){
     printf("Edad %d",edad);
     //No se esta usando el vector , ademas el v posicion 3 es el unico que valdra 99;
 }
+
+void prueba10(){
+    /*
+    int b[10];
+    for ( i=0;i<=10;i++){
+        b[i]=b[i+1];
+    }
+    */
+    //no se declara i
+    //b[i+1] esta incorrecto , en todo caso tendria que estar afuera de los corchetes
+}
