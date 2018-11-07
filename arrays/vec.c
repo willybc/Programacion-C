@@ -200,7 +200,7 @@ void menu(){
     printf("11:Pares \n");
     printf("12:Impares \n");
     printf("13:Posiciones pares \n");
-
+    printf("24:Programa de Sorteos \n");
     printf("\nEscriba funcion\n");
     scanf("%d", &opcion);
 
@@ -231,7 +231,30 @@ void menu(){
             break;
     case 13:posicion_par(v);
             break;
+    case 24:sorteo(v);
+            break;
     }
 }
 
+void sorteo ( int v[]){
+    int i,n,cont;
+    printf("Programa de Sorteos \n");
+    for ( i=0 ; i<10 ; i++){
+        cont = 0;
+        int v[54]={0};
+        printf("Sorteo nro %d :",i+1);
 
+        while ( cont < 6){
+            n = rand()%54+1;
+            if( v[n-1] == 0){
+                printf("%d",n);
+                if(cont < 6-1){
+                    printf("-");
+                }
+                v[n-1]=1;
+                cont ++;
+            }
+        }
+        printf("\n");
+    }
+}

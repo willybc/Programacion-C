@@ -20,4 +20,5 @@ int maximo ( int v[]);
 int pares ( int v[]);
 int impares ( int v[]);
 int posicion_par ( int v[]);
+void sorteo ( int v[]);
 #endif // VEC_H_INCLUDED
