@@ -11,6 +11,13 @@ void carga ( int v[], int n){
     }
 }
 
+void cargaAleatoria ( int v[], int n){
+    int i;
+    for ( i=0; i <n ; i++){
+        v[i] = rand()%10+1;
+    }
+}
+
 void emitir ( int v[], int n) {
     int i;
     printf("Registros \n");
@@ -181,6 +188,7 @@ int posicion_par ( int v[]){
     }
 }
 
+
 void menu(){
     int v[N];
     int opcion;
@@ -201,6 +209,7 @@ void menu(){
     printf("12:Impares \n");
     printf("13:Posiciones pares \n");
     printf("24:Programa de Sorteos \n");
+    printf("34:Ejercicio 6 \n");
     printf("\nEscriba funcion\n");
     scanf("%d", &opcion);
 
@@ -232,6 +241,8 @@ void menu(){
     case 13:posicion_par(v);
             break;
     case 24:sorteo(v);
+            break;
+    case 34:ejercicio6(v);
             break;
     }
 }
@@ -298,3 +309,6 @@ void prueba11(){
     //no se declara i
     //no se declara B
 }
+
+
+

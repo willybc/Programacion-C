@@ -4,6 +4,7 @@
 
 //PROTOTIPOS
 void carga ( int v[], int n);
+void cargaAleatoria ( int v[], int n);
 void emitir ( int v[], int n);
 void leer ( int v[]);
 void menu();
@@ -25,4 +26,5 @@ void prueba8();
 void prueba9();
 void prueba10();
 void prueba11();
+int ejercicio6( int v[]);
 #endif // VEC_H_INCLUDED

@@ -11,6 +11,13 @@ void carga ( int v[], int n){
     }
 }
 
+void cargaAleatoria ( int v[], int n){
+    int i;
+    for ( i=0; i <n ; i++){
+        v[i] = rand()%10+1;
+    }
+}
+
 void emitir ( int v[], int n) {
     int i;
     printf("Registros \n");
@@ -181,6 +188,20 @@ int posicion_par ( int v[]){
     }
 }
 
+int ejercicio6( int v[]){
+    int i;
+    cargaAleatoria(v,N);
+    emitir(v,N);
+
+    int v[];
+    printf("Registros \n");
+    for ( i=0;i<N;i++){
+
+        printf("%d \n",v[i]);
+    }
+
+}
+
 void menu(){
     int v[N];
     int opcion;
@@ -201,6 +222,7 @@ void menu(){
     printf("12:Impares \n");
     printf("13:Posiciones pares \n");
     printf("24:Programa de Sorteos \n");
+    printf("34:Ejercicio 6 \n");
     printf("\nEscriba funcion\n");
     scanf("%d", &opcion);
 
@@ -233,6 +255,8 @@ void menu(){
             break;
     case 24:sorteo(v);
             break;
+    case 34:ejercicio6(v);
+            break;
     }
 }
 
@@ -259,14 +283,45 @@ void sorteo ( int v[]){
     }
 }
 
-void prueba (){
+void prueba8(){
 printf("Que sucede cuando declaramos lo siguiente \n\n");
 printf("int vec[6]\n\n");
-printf("y luego ejecutamos\nvec[6]=78?\n");
+printf("y luego ejecutamos\n\nvec[6]=78?\n\n");
 int vec[6],a;
 
 a = (vec[6]=78);
 printf("el valor de vec[6] sera : %d\n",a);
-
-
 }
+
+void prueba9(){
+    int n=3;
+    int edad,notas[n];
+    edad=20; notas[n]=99;
+    printf("Edad %d",edad);
+    //No se esta usando el vector , ademas el v posicion 3 es el unico que valdra 99;
+}
+
+void prueba10(){
+    /*
+    int b[10];
+    for ( i=0;i<=10;i++){
+        b[i]=b[i+1];
+    }
+    */
+    //no se declara i
+    //b[i+1] esta incorrecto , en todo caso tendria que estar afuera de los corchetes
+}
+
+void prueba11(){
+    /*
+    int b[10];
+    for ( i=0 ; i<10 ; i++){
+        B[i] = b[i+1];
+    }
+    */
+    //no se declara i
+    //no se declara B
+}
+
+
+
