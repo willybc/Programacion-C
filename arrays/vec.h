@@ -21,4 +21,5 @@ int pares ( int v[]);
 int impares ( int v[]);
 int posicion_par ( int v[]);
 void sorteo ( int v[]);
+void prueba();
 #endif // VEC_H_INCLUDED

@@ -267,6 +267,12 @@ int vec[6],a;
 
 a = (vec[6]=78);
 printf("el valor de vec[6] sera : %d\n",a);
+}
 
-
+void prueba9(){
+    int n=3;
+    int edad,notas[n];
+    edad=20; notas[n]=99;
+    printf("Edad %d",edad);
+    //No se esta usando el vector , ademas el v posicion 3 es el unico que valdra 99;
 }
