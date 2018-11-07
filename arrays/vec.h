@@ -26,5 +26,5 @@ void prueba8();
 void prueba9();
 void prueba10();
 void prueba11();
-int ejercicio6( int v[]);
+double ejercicio13(double v[]);
 #endif // VEC_H_INCLUDED

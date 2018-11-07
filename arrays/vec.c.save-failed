@@ -3,7 +3,6 @@
 #include <string.h>
 
 #define N 10
-
 void carga ( int v[], int n){
     int i;
     for ( i=0; i <n ; i++){
@@ -13,7 +12,7 @@ void carga ( int v[], int n){
 
 void cargaAleatoria ( int v[], int n){
     int i;
-    for ( i=0; i <n ; i++){
+    for ( i=0; i<n ; i++){
         v[i] = rand()%10+1;
     }
 }
@@ -188,19 +187,6 @@ int posicion_par ( int v[]){
     }
 }
 
-int ejercicio6( int v[]){
-    int i;
-    cargaAleatoria(v,N);
-    emitir(v,N);
-
-    int v[];
-    printf("Registros \n");
-    for ( i=0;i<N;i++){
-
-        printf("%d \n",v[i]);
-    }
-
-}
 
 void menu(){
     int v[N];
@@ -255,7 +241,7 @@ void menu(){
             break;
     case 24:sorteo(v);
             break;
-    case 34:ejercicio6(v);
+    case 25:ejercicio13();
             break;
     }
 }
@@ -281,6 +267,13 @@ void sorteo ( int v[]){
         }
         printf("\n");
     }
+}
+
+void prueba7(){
+    int x, int_array[10];
+    x = int_array[4];
+    printf("%d",x);
+    //se asigna el valor en memoria que toma en la posicion 4
 }
 
 void prueba8(){
@@ -321,6 +314,22 @@ void prueba11(){
     */
     //no se declara i
     //no se declara B
+}
+
+void ejercicio13(int v[]){
+    int i,x,y;
+    x=0;
+    y=1;
+    carga(v,50);
+    for( i=0 ; i<50; i++){
+        n[i] = x+y;
+        a = n[i];
+        printf("%d\n",a);
+        x=y;
+        y=n[i];
+    }
+
+
 }
 
 
