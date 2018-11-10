@@ -4,7 +4,7 @@ int main(){
 
     int sp , ss;
     const int fil = 5;
-    const int col = 5;
+    const int col = 7;
 
     int m[fil][col];
 

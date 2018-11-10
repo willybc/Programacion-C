@@ -73,6 +73,8 @@ void emitir( int f , int c , int m[][c]){
         }
     }
 }
+
+
 /*
 void cargarvector( int f, struct datosv[]){
     int i;
@@ -84,11 +86,13 @@ void cargarvector( int f, struct datosv[]){
     }
 }
 
-void cargarmayor(int f,int c, int m[][c], struct datosv[]){
+void cargarmayor(int f, int c , int m[][c] , struct datosv[]){
     int i ,j, aux;
 
     for ( i=0 ; i<f ; i++){
-        if(m[i][j] > aux) aux = m[i][j];
+        if(m[i][j] > aux){
+            aux = m[i][j];
+        }
     }
     v[i].mayor = aux;
 }
