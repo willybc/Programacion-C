@@ -47,6 +47,21 @@ void MaximoColumna(int f , int c , int m[][c]){
     }
 }
 
+void PromedioColumna ( int f , int c , int m[][c]){
+    int i,j;
+    float prom,acu,cont;
+    for ( i=0; i<c ; i++){
+        acu=0; cont=0;
+        for ( j=0 ; j<f ; j++){
+            acu = acu + m[j][i];
+            cont++;
+        }
+        prom = acu / cont;
+        printf("El promedio de columna %d es de : %.2f \n",i+1,prom);
+    }
+
+}
+
 void MinimoMatriz(int f , int c , int m[][c]){
     int i,j,minM=9999;
     int x=0,y=0;
@@ -140,8 +155,10 @@ int m[N][M];
 cargar(N,M,m);
 emitirRegistros(N,M,m);
 cantidadCeros(N,M,m);
-MaximoColumna(N,M,m);
+PromedioColumna(N,M,m);
 /*
+MaximoColumna(N,M,m);
+
 MinimoMatriz(N,M,m);
 MaximoMatriz(N,M,m);
 
