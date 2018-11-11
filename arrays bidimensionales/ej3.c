@@ -33,7 +33,7 @@ void cantidadCeros(int f , int c , int m[][c]){
     }
     printf("Cantidad de ceros : %d \n",cont);
 }
-
+// IMPORTANTE ----------------------------------------------------------
 void MaximoColumna(int f , int c , int m[][c]){
     int i,j,maxF;
     for(i=0 ; i<c ; i++){
@@ -46,7 +46,7 @@ void MaximoColumna(int f , int c , int m[][c]){
     printf("Maximo valor de columna %d : %d \n",i+1,maxF);
     }
 }
-
+// IMPORTANTE ---------------------------------------------------------
 void PromedioColumna ( int f , int c , int m[][c]){
     int i,j;
     float prom,acu,cont;
@@ -59,9 +59,8 @@ void PromedioColumna ( int f , int c , int m[][c]){
         prom = acu / cont;
         printf("El promedio de columna %d es de : %.2f \n",i+1,prom);
     }
-
 }
-
+// IMPORTANTE ---------------------------------------------------------
 void MinimoMatriz(int f , int c , int m[][c]){
     int i,j,minM=9999;
     int x=0,y=0;

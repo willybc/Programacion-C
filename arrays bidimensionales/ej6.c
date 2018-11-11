@@ -6,12 +6,7 @@ void captura ( int f , int c , int m[][c]){
     int distrito , candidatoA, candidatoB , candidatoC;
 
     for(i=0 ; i<f ; i++){
-        /*printf("Escriba distrito\n");
-        scanf("%d",&distrito);
-        m[i][j] = distrito;
-*/
-        for(j=0 ; j<c ; i++){
-
+        for(j=0 ; j<c ; j++){
             if(j == 0){
                 printf("Escriba distrito \n");
                 scanf("%d",&distrito);
@@ -30,9 +25,11 @@ void captura ( int f , int c , int m[][c]){
                     m[i][j] = candidatoB;
                     }
                     else{
+                        if(j == 3){
                             printf("Candidado C? \n");
                             scanf("%d",&candidatoC);
                             m[i][j] = candidatoC;
+                        }
                     }
                 }
             }
@@ -45,7 +42,7 @@ void emitir ( int f , int c , int m[][c]){
 
     for (i=0 ; i<f ; i++){
         for(j=0 ; j<c ; j++){
-            printf("%d",m[i][j]);
+            printf("%d\t",m[i][j]);
         }
         printf("\n");
     }
@@ -53,8 +50,8 @@ void emitir ( int f , int c , int m[][c]){
 
 int main(){
 
-    const int F = 3;
-    const int C = 3;
+    const int F = 4;
+    const int C = 4;
 
     int m[F][C];
 
