@@ -36,14 +36,14 @@ void cantidadCeros(int f , int c , int m[][c]){
 
 void MaximoColumna(int f , int c , int m[][c]){
     int i,j,maxF;
-    for(i=0 ; i<f ; i++){
+    for(i=0 ; i<c ; i++){
             maxF=0;
-        for(j=0 ; j<c ; j++){
-            if (m[i][j] > maxF){
-            maxF = m[i][j];
+        for(j=0 ; j<f ; j++){
+            if (m[j][i] > maxF){
+            maxF = m[j][i];
             }
         }
-    printf("Maximo valor de fila %d : %d \n",i+1,maxF);
+    printf("Maximo valor de columna %d : %d \n",i+1,maxF);
     }
 }
 
@@ -140,7 +140,7 @@ int m[N][M];
 cargar(N,M,m);
 emitirRegistros(N,M,m);
 cantidadCeros(N,M,m);
-//MaximoColumna(N,M,m);
+MaximoColumna(N,M,m);
 /*
 MinimoMatriz(N,M,m);
 MaximoMatriz(N,M,m);
