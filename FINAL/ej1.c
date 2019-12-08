@@ -7,8 +7,8 @@ struct empleado{
     char nombre[15];
     char apellido[15];
     float sueldo;
-    char fecha[10];
-    char cargo[10];
+    char fecha[15];
+    char cargo[15];
 };
 
 int menu(){
@@ -87,7 +87,13 @@ void emisionDatos(FILE *archivo, int *cantemp){
     while( i < (*cantemp) ){
         fseek( archivo, i*sizeof(struct empleado), SEEK_SET);
         fread(&emp, sizeof(struct empleado), 1, archivo);
-        printf("%d\t%15s\t%15s\t%15.2f\t%10s\t%10s\t\n",emp.legajo, emp.nombre, emp.apellido, emp.sueldo, emp.fecha, emp.cargo);
+        //printf("%d\t%15s\t%15s\t%15.2f\t%10s\t%10s\t\n",emp.legajo, emp.nombre, emp.apellido, emp.sueldo, emp.fecha, emp.cargo);
+        printf("%d \t", emp.legajo);
+        printf("%15s \t", emp.nombre);
+        printf("%15s \t", emp.apellido);
+        printf("%.2f \t", emp.sueldo);
+        printf("%15s \t", emp.fecha);
+        printf("%15s \n", emp.cargo);
         i++;
     }
 
@@ -194,7 +200,7 @@ void modificacionSueldo( FILE *archivo ){
     remove("empleados.txt");
     rename("empleados.temp","empleados.txt");
     remove("empleados.temp");
-    printf("Aumento añadido \n");
+    printf("Aumento aï¿½adido \n");
     system("pause");
 
 }
