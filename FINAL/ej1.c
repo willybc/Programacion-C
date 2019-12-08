@@ -27,7 +27,7 @@ int menu(){
 void grabarDatos ( FILE * archivo){
     struct empleado emp;
     int r;
-    archivo = fopen("empleados.txt", "a");
+    archivo = fopen("empleados.txt", "a");//si no existe se crea
     if ( archivo == NULL) { perror("error al leer archivo"); exit(1);}
     fseek(archivo, 0, SEEK_END);
     fflush(stdin);
@@ -122,18 +122,9 @@ void buscaDatos( FILE *archivo ){
 void modificacion( FILE *archivo ){
     //modificacion de todos los datos de empleado
     int leg;
-    float nuevoSueldo;
-    char nuevoNombre[15];
-    char nuevoApellido[15];
-    char nuevoFecha[15];
-    char nuevoCargo[15];
-
-
     struct empleado emp;
     FILE * temp;
     leg = leerLegajo();
-
-
 
     archivo = fopen("empleados.txt", "r");
     temp = fopen("empleados.temp", "wt");
@@ -156,6 +147,7 @@ void modificacion( FILE *archivo ){
                     printf("Sueldo debe ser mayor a 0 \n");
                     printf("Ingrese de nuevo el sueldo \n");
                     scanf("%f", &emp.sueldo);
+                    fflush(stdin);
                 }
 
                 printf("Ingrese fecha de nacimiento modificado \n");
@@ -180,6 +172,31 @@ void modificacion( FILE *archivo ){
 void modificacionSueldo( FILE *archivo ){
     //10% de aumento a los jefes
     //15% al resto
+    struct empleado emp;
+    FILE *temp;
+
+    archivo = fopen("empleados.txt", "r");
+    temp = fopen("empleados.temp", "wt");
+    fseek(archivo, 0, SEEK_SET);
+
+    while(fread(&emp, sizeof(struct empleado), 1, archivo)){
+        if(emp.cargo == 'jefe'){
+            emp.sueldo = ((emp.sueldo * 0.10)+ emp.sueldo);
+        }
+        else{
+            emp.sueldo = ((emp.sueldo * 0.15)+ emp.sueldo);
+        }
+        fwrite(&emp, sizeof(struct empleado), 1, temp);
+    }
+
+    fclose(archivo);
+    fclose(temp);
+    remove("empleados.txt");
+    rename("empleados.temp","empleados.txt");
+    remove("empleados.temp");
+    printf("Aumento añadido \n");
+    system("pause");
+
 }
 
 int main(){
