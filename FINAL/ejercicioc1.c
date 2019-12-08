@@ -92,10 +92,118 @@ void agregarEmpleados(FILE* archivo){
     getchar();
 
 }
-void actualizarSueldo(){}
-void calcularSueldoTotal(){}
-void darBaja(){}
-void eliminarBaja(){}
+
+int leerLegajo(){
+    int leg;
+    printf("Escribe el legajo del empleado \n");
+    scanf("%d",&leg);
+    fflush(stdin);
+    return leg;
+}
+
+void actualizarSueldo(FILE *archivo){
+    struct Empleado emp;
+    FILE * temp;
+
+    archivo = fopen("empleados.dat","rb");
+
+    temp = fopen("empleados.temp", "wb");
+    if(temp == NULL){ perror("Error al abrir archivo empleados.temp \n"); exit(1);}
+
+    fseek(archivo, 0, SEEK_SET);
+    while(fread(&emp, sizeof(struct Empleado), 1, archivo)){
+        if(emp.cat == 'B'){
+            if(emp.local[0] == 'M'){
+                emp.sueldoxhora = ( (emp.sueldoxhora * 0.10)+ emp.sueldoxhora );
+            }
+
+        }
+        fwrite(&emp, sizeof(struct Empleado), 1, temp);
+    }
+    fclose(archivo);
+    fclose(temp);
+
+    remove("empleados.dat");
+    rename("empleados.temp","empleados.dat");
+    remove("empleados.temp");
+    printf("Sueldo moficiado correctamente \n");
+    system("pause");
+}
+void calcularSueldoTotal(FILE *archivo){
+    struct Empleado emp;
+    FILE *temp;
+
+    archivo = fopen("empleados.dat","rb");
+    temp = fopen("empleados.temp", "wb");
+
+    fseek(archivo , 0, SEEK_SET);
+    while(fread(&emp, sizeof(struct Empleado), 1, archivo)){
+        emp.total = (emp.horastrab*emp.sueldoxhora);
+        fwrite(&emp, sizeof(struct Empleado),1 , temp);
+    }
+    fclose(archivo);
+    fclose(temp);
+
+    remove("empleados.dat");
+    rename("empleados.temp","empleados.dat");
+    remove("empleados.temp");
+    printf("Total de sueldos de los empleados calculado \n");
+    system("pause");
+
+}
+void darBaja(FILE *archivo){
+    int leg;
+    char ape[30];
+    struct Empleado emp;
+    leg = leerLegajo();
+
+    printf("Escriba el apellido \n");
+    gets(ape);
+    fflush(stdin);
+
+    archivo = fopen("empleados.dat","r+b");
+    if( archivo == NULL ) { perror("error al abrir el archivo \n"); exit(1);}
+
+    while(!feof(archivo)){
+        if(fread(&emp, sizeof(struct Empleado), 1, archivo) == 1 ){
+            if ( leg == emp.leg ) {
+                if( ape[0] == emp.ape[0] && ape[1] == emp.ape[1] && ape[2] == emp.ape[2] && ape[3] == emp.ape[3] && ape[4] == emp.ape[4]){
+                    emp.valido = 0;
+                    fseek(archivo, -sizeof(struct Empleado), SEEK_CUR);
+                    fwrite(&emp, sizeof(struct Empleado), 1, archivo);
+                    printf("Empleado dado de baja logicamente \n");
+                    fflush(archivo);
+                }
+            }
+        }
+    }
+    fclose(archivo);
+
+    getchar();
+}
+void eliminarBaja(FILE *archivo){
+    FILE *temp;
+    struct Empleado emp;
+
+    archivo = fopen("empleados.dat", "rb");
+    temp = fopen("empleados.temp", "wb");
+
+    fseek(archivo , 0 , SEEK_SET);
+    while(fread(&emp, sizeof(struct Empleado), 1, archivo)){
+        if(emp.valido == 1 ){
+            fwrite(&emp, sizeof(struct Empleado),1, temp);
+        }
+    }
+    fclose(archivo);
+    fclose(temp);
+
+    remove("empleados.dat");
+    rename("empleados.temp","empleados.dat");
+    remove("empleados.temp");
+
+    printf("Empleados dados de baja eliminados \n");
+
+}
 
 main(){
     int opcion;
@@ -108,13 +216,13 @@ main(){
             break;
             case 2 : agregarEmpleados(archivo);
             break;
-            case 3 : actualizarSueldo();
+            case 3 : actualizarSueldo(archivo);
             break;
-            case 4 : calcularSueldoTotal();
+            case 4 : calcularSueldoTotal(archivo);
             break;
-            case 5 : darBaja();
+            case 5 : darBaja(archivo);
             break;
-            case 6 : eliminarBaja();
+            case 6 : eliminarBaja(archivo);
             break;
         }
     }while(opcion != 0);
