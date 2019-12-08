@@ -2,9 +2,7 @@
 
 int main () {
     int r;
-    FILE *arch;
-
-
+    FILE *archivoh;
     arch = fopen("prog1.ent", "rt");
 
     if(arch == NULL){
